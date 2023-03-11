@@ -4,7 +4,6 @@ export class MockStreamDuplex extends Duplex {
   readable = true
   writable = true
 
-  closed = false
   destroyed = false
 
   ended = false
@@ -18,10 +17,7 @@ export class MockStreamDuplex extends Duplex {
   private encoding?: BufferEncoding
   private error?: Error
 
-  close(): void {
-    this.closed = true
-  }
-  destroy(): void {
+  _destroy(): void {
     this.destroyed = true
   }
   pause(): this {
@@ -60,8 +56,8 @@ export class MockStreamDuplex extends Duplex {
     }
     return !chunk.toString().startsWith("pause")
   }
-  end(): void {
-    // noop
+  end(): this {
+    return this
   }
   cork(): void {
     // noop

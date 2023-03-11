@@ -1,10 +1,7 @@
 # promise-duplex
 
-<!-- markdownlint-disable MD013 -->
-
-[![Build Status](https://secure.travis-ci.org/dex4er/js-promise-duplex.svg)](http://travis-ci.org/dex4er/js-promise-duplex) [![Coverage Status](https://coveralls.io/repos/github/dex4er/js-promise-duplex/badge.svg)](https://coveralls.io/github/dex4er/js-promise-duplex) [![npm](https://img.shields.io/npm/v/promise-duplex.svg)](https://www.npmjs.com/package/promise-duplex)
-
-<!-- markdownlint-enable MD013 -->
+This is a fork from
+[promise-duplex](https://github.com/dex4er/js-promise-duplex) by Piotr Roszatycki!
 
 This module allows to convert
 [`Duplex`](https://nodejs.org/api/stream.html#stream_class_stream_duplex) stream
@@ -18,26 +15,26 @@ The module combines
 
 ## Requirements
 
-This module requires Node >= 6.
+This module requires Node >= 18.
 
 ## Installation
 
 ```shell
-npm install promise-duplex
+npm install @serban.marti/promise-duplex
 ```
 
 ## Usage
 
 ```js
-const {PromiseDuplex} = require("promise-duplex")
+const {PromiseDuplex} = require("@serban.marti/promise-duplex")
 ```
 
 _Typescript_:
 
 ```ts
-import PromiseDuplex from "promise-duplex"
+import PromiseDuplex from "@serban.marti/promise-duplex"
 // or
-import {PromiseDuplex} from "promise-duplex"
+import {PromiseDuplex} from "@serban.marti/promise-duplex"
 ```
 
 ### constructor
@@ -52,7 +49,7 @@ _Example:_
 
 ```js
 const net = require("net")
-const {PromiseDuplex} = require("promise-duplex")
+const {PromiseDuplex} = require("@serban.marti/promise-duplex")
 
 const stream = new net.Socket()
 
@@ -63,7 +60,7 @@ _Typescript:_
 
 ```ts
 import net from "net"
-import PromiseDuplex from "promise-duplex"
+import PromiseDuplex from "@serban.marti/promise-duplex"
 
 const stream = new net.Socket()
 
@@ -194,7 +191,5 @@ This method calls destroy method on stream and cleans up all own handlers.
 [`PromisePiping`](https://www.npmjs.com/package/promise-piping).
 
 ## License
-
-Copyright (c) 2017-2019 Piotr Roszatycki <piotr.roszatycki@gmail.com>
 
 [MIT](https://opensource.org/licenses/MIT)

@@ -6,13 +6,10 @@ import {Duplex} from "stream"
 import {PromiseReadable} from "promise-readable"
 import {PromiseWritable} from "promise-writable"
 
-interface DuplexStream extends Duplex {
-  closed?: boolean
-}
-
-export class PromiseDuplex<TDuplex extends DuplexStream>
+export class PromiseDuplex<TDuplex extends Duplex>
   extends PromiseReadable<TDuplex>
-  implements AsyncIterable<Buffer | string> {
+  implements AsyncIterable<Buffer | string>
+{
   readonly readable: PromiseReadable<TDuplex>
   readonly writable: PromiseWritable<TDuplex>
 
